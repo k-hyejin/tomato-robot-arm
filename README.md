@@ -98,11 +98,12 @@ Tomato Harvesting
 
 ## 저장소 파일 구성
 
-| 파일                  | 설명                                                      |
-| ------------------- | ------------------------------------------------------- |
-| `tomato.py`         | 데이터셋 분석, 전처리, 객체 탐지 및 토마토 중심 좌표 추출                      |
+| 파일 | 설명 |
+| --- | --- |
+| `tomato.py` | 데이터셋 분석, 전처리, 객체 탐지 및 토마토 중심 좌표 추출 |
 | `robot_arduino.ino` | Arduino 기반 로봇팔 제어 코드 (Serial 통신, 역기구학, 서보 제어, 라인트래킹 포함) |
-| `README.md`         | 프로젝트 소개 및 시스템 구성 문서                                     |
+| `.gitignore` | 데이터셋 및 불필요한 캐시 파일을 Git 추적에서 제외하기 위한 설정 |
+| `README.md` | 프로젝트 소개 및 시스템 구성 문서 |
 
 ## 기술 스택
 
@@ -143,11 +144,6 @@ sudo apt update
 sudo apt install -y python3-picamera2
 ```
 
-`tomato.py` 상단의 데이터셋 경로를 실행 환경에 맞게 수정합니다.
-
-```python
-andrewmvd_tomato_detection_path = "/path/to/tomato_dataset"
-```
 
 
 ## Dataset
@@ -157,11 +153,10 @@ andrewmvd_tomato_detection_path = "/path/to/tomato_dataset"
 데이터셋 구조:
 
 tomato_dataset/
-├── original_dataset/
-└── processed_dataset/
-    ├── train/
-    ├── valid/
-    └── test/
+├── 기본 데이터셋/
+└── 정리한 데이터셋/
+    ├── remapped_tomato/
+    ├── yield_label_convert/
 
 ## 배운 점
 
